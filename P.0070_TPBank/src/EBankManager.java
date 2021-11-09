@@ -18,10 +18,8 @@ public class EBankManager {
     ResourceBundle bundle;
 
     public void displayMenu() {
-        System.out.println("Login function of Ebank system includes:\n"
-                + "1. Vietnamese\n"
-                + "2. English\n"
-                + "3. Exit");
+        System.out
+                .println("Login function of Ebank system includes:\n" + "1. Vietnamese\n" + "2. English\n" + "3. Exit");
     }
 
     public void login(Locale locale, HashMap<String, String> account) {
@@ -45,12 +43,11 @@ public class EBankManager {
         }
 
         while (true) {
-            String generatedCapcha = generateCapcha();
-            System.out.println("Capcha: " + generatedCapcha);
-            String enteredCapcha = InputData.getCapcha(bundle.getString("capcha"),
-                    bundle.getString("string.empty"));
-            // ensure user enter correct capcha
-            if (enteredCapcha.equals(generatedCapcha)) {
+            String generatedCaptcha = generateCaptcha();
+            System.out.println("Capcha: " + generatedCaptcha);
+            String enteredCaptcha = InputData.getCapcha(bundle.getString("capcha"), bundle.getString("string.empty"));
+            // ensure user enter correct captcha
+            if (enteredCaptcha.equals(generatedCaptcha)) {
                 System.out.println(bundle.getString("login.success"));
                 break;
             } else {
@@ -64,17 +61,17 @@ public class EBankManager {
         bundle = ResourceBundle.getBundle("languages/lang", locale);
     }
 
-    private String generateCapcha() {
+    private String generateCaptcha() {
         Random rand = new Random();
         String symbols = "abcdefghijklmnopqrstuvxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
-        StringBuilder capchaCode = new StringBuilder();
+        StringBuilder captchaCode = new StringBuilder();
 
-        // loop 5 times to create capchaCode
+        // loop 5 times to create captchaCode
         for (int i = 0; i < 5; i++) {
             int randIndex = rand.nextInt(symbols.length());
-            capchaCode.append(symbols.charAt(randIndex));
+            captchaCode.append(symbols.charAt(randIndex));
         }
-        return capchaCode.toString();
+        return captchaCode.toString();
     }
 
 }

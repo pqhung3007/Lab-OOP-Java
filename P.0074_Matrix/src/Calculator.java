@@ -20,7 +20,6 @@ public class Calculator {
         int row2 = 0, col2 = 0;
         while (true) {
             row2 = InputData.getMatrixSize("Enter Row Matrix 2:");
-            // ensure row of each matrix must be the same
             if (row2 != row1) {
                 System.out.println("Number of rows of both matrices must be the same");
                 continue;
@@ -46,9 +45,8 @@ public class Calculator {
         int rows = matrix1.length;
         int cols = matrix1[0].length;
         int[][] result = new int[rows][cols];
-        // traverse through matrix1's row 
+
         for (int i = 0; i < rows; i++) {
-            // traverse through matrix1's column
             for (int j = 0; j < cols; j++) {
                 result[i][j] = matrix1[i][j] + matrix2[i][j];
             }
@@ -56,7 +54,7 @@ public class Calculator {
         return result;
     }
 
-    public void substractionMatrix() {
+    public void subtractionMatrix() {
         System.out.println("-------Subtraction-------");
 
         int row1 = InputData.getMatrixSize("Enter Row Matrix 1:");
@@ -84,17 +82,16 @@ public class Calculator {
         }
         int[][] matrix2 = InputData.getMatrixValue(row2, col2, 2);
 
-        int[][] difference = processSubstraction(matrix1, matrix2);
+        int[][] difference = processSubtraction(matrix1, matrix2);
         displayExpression(matrix1, "-", matrix2, difference);
     }
 
-    public int[][] processSubstraction(int[][] matrix1, int[][] matrix2) {
+    public int[][] processSubtraction(int[][] matrix1, int[][] matrix2) {
         int rows = matrix1.length;
         int cols = matrix1[0].length;
         int[][] result = new int[rows][cols];
-        // traverse through matrix1's row 
+
         for (int i = 0; i < rows; i++) {
-            // traverse through matrix1's column
             for (int j = 0; j < cols; j++) {
                 result[i][j] = matrix1[i][j] - matrix2[i][j];
             }
@@ -113,7 +110,6 @@ public class Calculator {
         int row2 = 0, col2 = 0;
         while (true) {
             row2 = InputData.getMatrixSize("Enter Row Matrix 2:");
-            // ensure column of matrix 1 = row of matrix 2
             if (row2 != col1) {
                 System.out.println("Number of columns in matrix 1 must equal number of rows in matrix 2");
                 continue;
@@ -132,11 +128,9 @@ public class Calculator {
         int cols = matrix2[0].length;
         int k = matrix1[0].length;
         int[][] result = new int[rows][cols];
-        // traverse through matrix1's row 
+
         for (int i = 0; i < rows; i++) {
-            // traverse through matrix2's column
             for (int j = 0; j < cols; j++) {
-                // traverse through matrix1's column
                 for (int l = 0; l < k; l++) {
                     result[i][j] += matrix1[i][l] * matrix2[l][j];
                 }
@@ -157,9 +151,8 @@ public class Calculator {
     public void displayMatrix(int[][] matrix) {
         int rows = matrix.length;
         int cols = matrix[0].length;
-        // traverse through matrix's row
+
         for (int i = 0; i < rows; i++) {
-            // traverse through matrix's column 
             for (int j = 0; j < cols; j++) {
                 System.out.print("[" + matrix[i][j] + "]");
             }

@@ -16,25 +16,25 @@ public class Main {
         while (true) {
             // Step 1: Display a menu
             displayMenu();
-            
-            //Step 2: Ask user to select an option
+
+            // Step 2: Ask user to select an option
             int choice = InputData.getChoice("Your choice:", "Choice out of range [1-4]");
             switch (choice) {
-                // Step 3: add 2 matrices
-                case 1:
-                    calc.additionMatrix();
-                    break;
-                // Step 4: substract 2 matrices
-                case 2:
-                    calc.substractionMatrix();
-                    break;
-                // Step 5: multiply 2 matrices
-                case 3:
-                    calc.multiplicationMatrix();
-                    break;
-                // Step 6: exit program
-                case 4:
-                    System.exit(0);
+            // Step 3: add 2 matrices
+            case 1:
+                calc.additionMatrix();
+                break;
+            // Step 4: subtract 2 matrices
+            case 2:
+                calc.subtractionMatrix();
+                break;
+            // Step 5: multiply 2 matrices
+            case 3:
+                calc.multiplicationMatrix();
+                break;
+            // Step 6: exit program
+            case 4:
+                System.exit(0);
             }
         }
     }

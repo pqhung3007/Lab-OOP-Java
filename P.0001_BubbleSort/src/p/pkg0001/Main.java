@@ -18,23 +18,23 @@ import java.util.Random;
 public class Main {
 
     public static void main(String[] args) {
-//         Step 1: Input a postive decimal integer
-//        int decimal = inputPositiveDecimal();
-//
-////         Step 2: Generate random array
-//        int[] arr = new int[decimal];
-//        randArray(arr);
+        // Step 1: Input a postive decimal integer
+        int decimal = inputPositiveDecimal();
 
-//         create sample array to check 
-        int[] arr = createSampleArray();
+        // Step 2: Generate random array
+        int[] arr = new int[decimal];
+        randArray(arr);
 
-//         Step 3: Display array before sorting
+        // create sample array to test algorithm (specific lecturer's requirement)
+        // int[] arr = createSampleArray();
+
+        // Step 3: Display array before sorting
         displayArray("Unsorted array: ", arr);
 
-//         Step 4: Implement bubble sort
+        // Step 4: Implement bubble sort
         int[] sortArray = bubbleSort(arr);
 
-//         Step 5: Display array after sorting
+        // Step 5: Display array after sorting
         displayArray("Sorted array: ", sortArray);
 
     }
@@ -67,10 +67,10 @@ public class Main {
         return arr;
     }
 
-    private static int[] createSampleArray() {
-        int temp[] = new int[]{5, 1, 18, -5, 16};
-        return temp;
-    }
+    // private static int[] createSampleArray() {
+    // int temp[] = new int[]{5, 1, 18, -5, 16};
+    // return temp;
+    // }
 
     // display array
     private static void displayArray(String msg, int[] arr) {
@@ -78,22 +78,24 @@ public class Main {
         System.out.print(Arrays.toString(arr));
     }
 
-    // perform bubblesort
+    // perform bubble sort
     private static int[] bubbleSort(int[] arr) {
         System.out.println("");
         // traverse elements from the beginning to the end of array
-        for (int i = 0; i < arr.length -1 ; i++) {
+        for (int i = 0; i < arr.length - 1; i++) {
             // traverse from the beginning of array to last unsorted element
             for (int j = 0; j < arr.length - i - 1; j++) {
                 // check if current number is greater than the next
                 // if yes then swap its position
                 if (arr[j] > arr[j + 1]) {
-                    System.out.println(Arrays.toString(arr) + "\t" + arr[j] + " > " + arr[j + 1] + ",swap");
+                    // System.out.println(Arrays.toString(arr) + "\t" + arr[j] + " > " + arr[j + 1]
+                    // + ",swap");
                     int temp = arr[j];
                     arr[j] = arr[j + 1];
                     arr[j + 1] = temp;
                 } else {
-                    System.out.println(Arrays.toString(arr) + "\t" + arr[j] + " < " + arr[j + 1] + ",ok");
+                    // System.out.println(Arrays.toString(arr) + "\t" + arr[j] + " < " + arr[j + 1]
+                    // + ",ok");
 
                 }
             }
